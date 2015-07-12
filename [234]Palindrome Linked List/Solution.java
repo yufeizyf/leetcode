@@ -8,11 +8,15 @@ class ListNode {
 public class Solution {
     public boolean isPalindrome(ListNode head) {
         if(head == null || head.next == null) return true; 
-        
+ 	
+	//1.find the middle of list       
         ListNode mid = findMid(head);
+	
+	//2.reverse the right part of list
         ListNode right = reverseRightPart(mid.next);   
         ListNode left = head;
         
+	//3.compare left and right part of list
         boolean flag = true;
         while(right != null) {
         	if(left.val != right.val) {
