@@ -12,7 +12,7 @@ public class Solution {
     	result[pos++] = nums[queue.peekFirst()];
     	
     	for(int i = k; i < nums.length; i++) {
-    		//clear empty not in window
+    		//clear element not in window
     		while(!queue.isEmpty() && queue.peekFirst() < i - k + 1) {
     			queue.removeFirst();
     		}
